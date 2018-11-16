@@ -8,10 +8,8 @@ def max_dis_resize(src_img, max_dis):
     print(max_edge, max_dis)
     print(type(max_edge), type(max_dis))
     if max_edge > max_dis :
-        print('3')
         rate = float(max_dis)/max_edge
     else:
-        print('4')
         return []
 
     cols = int(len(src_img[0])*rate)
@@ -49,13 +47,11 @@ if __name__ == '__main__':
         src_img = cv2.imread(src_img_path)
 
         if len(sys.argv) == 4:
-            print('1')
             save_img = max_dis_resize(src_img, max_dis)
         else:
             save_img = col_row_resize(src_img, dst_width, dst_height)
 
         if len(save_img) == 0:
-            print('2')
             continue
 
         save_img_path = os.path.join(save_dir, file)
